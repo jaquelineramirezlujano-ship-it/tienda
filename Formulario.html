@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8ebe2;
+        margin: 0;
+        padding: 0;
+    }
+
+    .contenedor-form {
+        width: 400px;
+        margin: 40px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        color: #ffd24a;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 8px;
+        border: 1px solid #bbb;
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #fa8e13;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #fed47f;
+    }
+
+    .mensaje-error {
+        color: rgb(255, 149, 0);
+        font-size: 13px;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .mensaje-exito {
+        color: green;
+        font-size: 14px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    body{background-color: rgb(255, 243, 233);
+    padding-top: 70px;}
+#Menu{
+    background-color: rgb(255, 168, 39);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+font-family:Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 20px;   /* <-- mucho más pequeño */
+    height: 60px;        /* <-- controla el tamaño total */
+}
+
+
+#Menu ol{
+    list-style:none;
+    align-items: center;
+    display: flex;
+}
+#Menu ol li{
+    display:inline-block;
+    position: relative;
+}
+#Menu ol li a{color:rgb(255, 255, 255);
+    text-decoration:none;
+    display:block;
+    padding:10px 105px;
+}
+#Menu ol li a:hover{background-color: rgb(255, 231, 255);}
+        .inicio {
+    display: flex;
+    padding: 40px;
+}
+.logotipo {
+    width: 70px;
+}
+
+.footer {
+    background-color:  rgb(255, 168, 39);  /* color similar al de tu imagen */
+    padding: 80px 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-contenido {
+    max-width: 700px;
+    margin: auto;
+}
+
+.footer .direccion {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.footer .descripcion {
+    margin-top: 15px;
+    font-size: 17px;
+    color: #333;
+}
+
+.footer .descripcion a {
+    color: rgb(0, 0, 0);
+}
+
+.footer h3 {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.redes {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.titulo {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ff2f52;
+}
+
+.categoria {
+    font-size: 30px;
+    margin-top: 40px;
+    color: #c65b5b;
+}
+
+.grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.producto {
+    background: white;
+    width: 210px;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+.producto img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.btn {
+    background: #ffb3b3;
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.carrito {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.precio {
+    font-weight: bold;
+    color: #444;
+}
+</style>
+
+</head>
+<body>
+    <div id="Menu">
+        <img src="imgenes/logotipo.jpeg" class="logotipo" alt="Logotipo">
+
+        <ol>
+            <li><a href="index.html">INICIO </a></li>
+            <li><a href="pro.html">PRODUCTOS</a></li>
+            <li><a href="ofer.html">OFERTA</a></li>
+            <li><a href="carri.html">CARRITO</a></li>
+            <li><a href="ubi.html">PERFIL</a></li>
+        </ol>
+    </div>
+    
+        <div class="contenedor-form">
+            <h2>Crear Cuenta</h2>
+        
+            <form action="guardar.php" method="POST">
+        
+                <label>Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+        
+                <label>Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Ingresa tus apellidos">
+        
+                <label>Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com">
+        
+                <label>Contraseña:</label>
+                <input type="password" id="password" name="contraseña" placeholder="Ingresa una contraseña">
+        
+                <label>Confirmar Contraseña:</label>
+                <input type="password" id="confirmar"name="confirmar_contraseña" placeholder="Repite tu contraseña">
+        
+                <button class="btn" type="submit">Registrarse</button>
+        
+                <p id="mensaje" class="mensaje-error"></p>
+        
+        </div>
+
+<script>
+    function registrar() {
+        let nombre = document.getElementById("nombre").value;
+        let apellidos = document.getElementById("apellidos").value;
+        let correo = document.getElementById("correo").value;
+        let pass = document.getElementById("password").value;
+        let confirmar = document.getElementById("confirmar").value;
+        let mensaje = document.getElementById("mensaje");
+
+        // Validaciones básicas
+        if (!nombre || !apellidos || !correo || !pass || !confirmar) {
+            mensaje.textContent = "Todos los campos son obligatorios.";
+            mensaje.className = "mensaje-error";
+            return;
+        }
+
+        if (pass !== confirmar) {
+            mensaje.textContent = "Las contraseñas no coinciden.";
+            mensaje.className = "mensaje-error";
+            return;
+        }
+
+        mensaje.textContent = "¡Registro exitoso!";
+        mensaje.className = "mensaje-exito";
+    }
+</script>
+ 
+</section>
+<footer class="footer">
+    <div class="footer-contenido">
+
+        <p class="direccion">
+            Cerca de Los Pinos 65, La Loma,<br>
+             Tláhuac, 13529 La Loma O Lomita, CDMX<br>
+            <strong>Tel: +52 55 7191 0067</strong>
+        </p>
+
+        <p class="descripcion">
+           esta aplicacion nos ayudara a mejorar las ventas en la tienda 
+        </p>
+
+        <h3>SIGUENOS EN:</h3>
+
+        <div class="redes">
+            <a href="https://www.facebook.com/profile.php?id=61583872684546" target="_blank"><img src="imgenes/face.webp" alt="Facebook"> </a>
+            <a href="https://www.instagram.com/el_senor_del_perdon?igsh=N2k3ZDlhY2pkbmNy" target="_blank"><img src="imgenes/Instagram.svg" alt="Instagram"></a>
+            <a href="https://maps.app.goo.gl/HcQLy4JGK3bFPL4WA" target="_blank"><img src="imgenes/MAPS.png" alt="MAPS"></a>
+        </div>
+
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <style>
+        body{background-color: rgb(255, 243, 233);
+    padding-top: 70px;}
+#Menu{
+    background-color: rgb(255, 168, 39);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 20px;   /* <-- mucho más pequeño */
+    height: 60px;        /* <-- controla el tamaño total */
+}
+
+
+#Menu ol{
+    list-style:none;
+    align-items: center;
+    display: flex;
+}
+#Menu ol li{
+    display:inline-block;
+    position: relative;
+}
+#Menu ol li a{color:white;
+    text-decoration:none;
+    display:block;
+    padding:10px 105px;
+}
+#Menu ol li a:hover{background-color: rgb(255, 231, 255);}
+        .inicio {
+    display: flex;
+    padding: 40px;
+}
+.logotipo {
+    width: 70px;
+}
+
+.footer {
+    background-color:  rgb(255, 168, 39);  /* color similar al de tu imagen */
+    padding: 80px 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-contenido {
+    max-width: 700px;
+    margin: auto;
+}
+
+.footer .direccion {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.footer .descripcion {
+    margin-top: 15px;
+    font-size: 17px;
+    color: #333;
+}
+
+.footer .descripcion a {
+    color: rgb(39, 18, 22);
+}
+
+.footer h3 {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.redes {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ -->
+    <div id="Menu">
+        <img src="imgenes/logotipo.jpeg" class="logotipo" alt="Logotipo">
+        <ol>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="pro.html">PRODUCTOS</a></li>
+            <li><a href="ofer.html">OFERTA</a></li>
+            <li><a href="carri.html">CARRITO</a></li>
+            <li><a href="ubi.html">PERFIL</a></li>
+
+        </ol>
+    </div>
+
+    <section class="contenido">
+        <h1>Ubicacion</h1>
+        <p>Aquí irán tus productos. (Prototipo)</p>
+    </section>
+    
+</section>
+<footer class="footer">
+    <div class="footer-contenido">
+
+        <p class="direccion">
+            Cerca de Los Pinos 65, La Loma,<br>
+             Tláhuac, 13529 La Loma O Lomita, CDMX<br>
+            <strong>Tel: +52 55 7191 0067</strong>
+        </p>
+
+        <p class="descripcion">
+           esta aplicacion nos ayudara a mejorar las ventas en la tienda 
+        </p>
+
+        <h3>SIGUENOS EN:</h3>
+
+        <div class="redes">
+            <a href="https://www.facebook.com/profile.php?id=61583872684546" target="_blank"><img src="imgenes/face.webp" alt="Facebook"> </a>
+            <a href="https://www.instagram.com/el_senor_del_perdon?igsh=N2k3ZDlhY2pkbmNy" target="_blank"><img src="imgenes/Instagram.svg" alt="Instagram"></a>
+            <a href="https://maps.app.goo.gl/HcQLy4JGK3bFPL4WA" target="_blank"><img src="imgenes/MAPS.png" alt="MAPS"></a>
+        </div>
+
+    </div>
+
+</body>
+</html>

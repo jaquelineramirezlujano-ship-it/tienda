@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <style>
+        body{background-color: rgb(255, 243, 233);
+    padding-top: 70px;}
+#Menu{
+    background-color: rgb(255, 168, 39);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+font-family:Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 20px;   /* <-- mucho más pequeño */
+    height: 60px;        /* <-- controla el tamaño total */
+}
+
+
+#Menu ol{
+    list-style:none;
+    align-items: center;
+    display: flex;
+}
+#Menu ol li{
+    display:inline-block;
+    position: relative;
+}
+#Menu ol li a{color:rgb(255, 255, 255);
+    text-decoration:none;
+    display:block;
+    padding:10px 105px;
+}
+#Menu ol li a:hover{background-color: rgb(255, 231, 255);}
+        .inicio {
+    display: flex;
+    padding: 40px;
+}
+.logotipo {
+    width: 70px;
+}
+
+.footer {
+    background-color:  rgb(255, 168, 39);  /* color similar al de tu imagen */
+    padding: 80px 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-contenido {
+    max-width: 700px;
+    margin: auto;
+}
+
+.footer .direccion {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.footer .descripcion {
+    margin-top: 15px;
+    font-size: 17px;
+    color: #333;
+}
+
+.footer .descripcion a {
+    color: rgb(0, 0, 0);
+}
+
+.footer h3 {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.redes {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.titulo {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ff2f52;
+}
+
+.categoria {
+    font-size: 30px;
+    margin-top: 40px;
+    color: #c65b5b;
+}
+
+.grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.producto {
+    background: white;
+    width: 210px;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+.producto img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.btn {
+    background: #ffb3b3;
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.carrito {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.precio {
+    font-weight: bold;
+    color: #444;
+}
+    </style>
+   
+</head>
+<body>
+    <form action="guardar.php" method="POST">
+    </form>
+    <!-- MENÚ -->
+    <div id="Menu">
+        <img src="imgenes/logotipo.jpeg" class="logotipo" alt="Logotipo">
+        <ol>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="pro.html">PRODUCTOS</a></li>
+            <li><a href="ofer.html">OFERTA</a></li>
+            <li><a href="carri.html">CARRITO</a></li>
+            <li><a href="ubi.html">PERFIL</a></li>
+
+        </ol>
+    </div>
+
+    <h1 class="titulo">Nuestros Productos</h1>
+
+    <div class="contenedor">
+    
+        <!-- CATEGORÍA ABARROTES -->
+        <h2 class="categoria">Abarrotes</h2>
+        <div class="grid">
+    
+            <div class="producto">
+                <img src="imgenes/papas.jpg" alt="Papas">
+                <h3>Papas</h3>
+                <p class="precio">$15.00</p>
+              
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Papas', 15)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/atun.webp" alt="Atún">
+                <h3>Atún</h3>
+                <p class="precio">$22.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Atún', 22)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/maiz.png" alt="Maiz">
+                <h3>Maiz</h3>
+                <p class="precio">$25.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Maiz', 15)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/lentejas.jpg" alt="lentejas">
+                <h3>lentejas</h3>
+                <p class="precio">$19.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('lentejas', 15)">Agregar al carrito</button>
+            </div>
+            
+            <div class="producto">
+                <img src="imgenes/arroz.webp" alt="arroz">
+                <h3>arroz</h3>
+                <p class="precio">$18.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('arroz', 15)">Agregar al carrito</button>
+            </div>
+    
+    
+            <div class="producto">
+                <img src="imgenes/salchicha.jpg" alt="salchicha">
+                <h3>salchicha</h3>
+                <p class="precio">$45.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('salchicha', 15)">Agregar al carrito</button>
+            </div>
+    
+
+    
+
+    
+        <!-- CATEGORÍA LACTEOS -->
+        <h2 class="categoria">Lácteos</h2>
+        <div class="grid">
+    
+            <div class="producto">
+                <img src="imgenes/leche.png" alt="Leche">
+                <h3>Leche</h3>
+                <p class="precio">$20.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Leche', 20)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/queso.webp" alt="Queso">
+                <h3>Queso</h3>
+                <p class="precio">$35.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Queso', 35)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/yogurd.webp" alt="yogurd">
+                <h3>yogurd</h3>
+                <p class="precio">$20.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('yogurd', 20)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imgenes/gelatina.jpg" alt="gelatina">
+                <h3>Leche</h3>
+                <p class="precio">$10.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('gelatina', 20)">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="imgenes/philadelphia.jpg" alt="philadelphia">
+                <h3>philadelphia</h3>
+                <p class="precio">$20.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('philadelphia', 20)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imgenes/crema.jpg" alt="crema">
+                <h3>crema</h3>
+                <p class="precio">$45.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('crema', 20)">Agregar al carrito</button>
+            </div>
+        </div>
+    
+        <!-- CATEGORÍA LIMPIEZA -->
+        <h2 class="categoria">Limpieza e Higiene</h2>
+        <div class="grid">
+    
+            <div class="producto">
+                <img src="imgenes/detergente.webp" alt="Detergente">
+                <h3>Detergente</h3>
+                <p class="precio">$28.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Detergente', 28)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/shampoo.webp" alt="Shampoo">
+                <h3>Shampoo</h3>
+                <p class="precio">$130.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Shampoo', 30)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/acondicionador.jpg" alt="acondicionador ">
+                <h3>acondicionador</h3>
+                <p class="precio">$140.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('acondicionador', 28)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/cepillo.jpg" alt="cepillo">
+                <h3>cepillo</h3>
+                <p class="precio">$20.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('cepillo', 28)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/pasta.jpg" alt="pasta de dientes ">
+                <h3>pasta de dientes</h3>
+                <p class="precio">$28.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('pasta de dientes ', 28)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/fabuloso.avif" alt="fabuloso">
+                <h3>fabuloso</h3>
+                <p class="precio">$50.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('fabuloso', 28)">Agregar al carrito</button>
+            </div>
+    
+        </div>
+    
+        <!-- CATEGORÍA BEBIDAS -->
+        <h2 class="categoria">Bebidas</h2>
+        <div class="grid">
+    
+            <div class="producto">
+                <img src="imgenes/coca.webp" alt="Refresco">
+                <h3>Refresco</h3>
+                <p class="precio">$45.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Refresco', 18)">Agregar al carrito</button>
+            </div>
+    
+            <div class="producto">
+                <img src="imgenes/jugo.webp" alt="Jugo">
+                <h3>Jugo</h3>
+                <p class="precio">$22.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('Jugo', 12)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imgenes/red.jpg" alt="red coola">
+                <h3>red coola</h3>
+                <p class="precio">$33.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('red coola', 18)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imgenes/yakult.png" alt="yakult">
+                <h3>yakult</h3>
+                <p class="precio">$10.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('yakult', 18)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imgenes/peñafiel.jpg" alt="peñafiel">
+                <h3>peñafiel</h3>
+                <p class="precio">$20.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('peñafiel', 18)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imgenes/boing.jpg" alt="boing ">
+                <h3>boing</h3>
+                <p class="precio">$18.00</p>
+    
+                <div class="controls">
+                    <button class="btn" onclick="sumar(this)">+</button>
+                    <span class="contador">0</span>
+                    <button class="btn" onclick="restar(this)">−</button>
+                </div>
+    
+                <button class="carrito" onclick="agregarCarrito('boing+', 18)">Agregar al carrito</button>
+            </div>
+
+        </div>
+    
+    </div>
+  
+
+<script src="script.js"></script>
+
+</section>
+<footer class="footer">
+    <div class="footer-contenido">
+
+        <p class="direccion">
+            Cerca de Los Pinos 65, La Loma,<br>
+             Tláhuac, 13529 La Loma O Lomita, CDMX<br>
+            <strong>Tel: +52 55 7191 0067</strong>
+        </p>
+
+        <p class="descripcion">
+           esta aplicacion nos ayudara a mejorar las ventas en la tienda 
+        </p>
+
+        <h3>SIGUENOS EN:</h3>
+
+        <div class="redes">
+            <a href="https://www.facebook.com/profile.php?id=61583872684546" target="_blank"><img src="imgenes/face.webp" alt="Facebook"> </a>
+            <a href="https://www.instagram.com/el_senor_del_perdon?igsh=N2k3ZDlhY2pkbmNy" target="_blank"><img src="imgenes/Instagram.svg" alt="Instagram"></a>
+            <a href="https://maps.app.goo.gl/HcQLy4JGK3bFPL4WA" target="_blank"><img src="imgenes/MAPS.png" alt="MAPS"></a>
+        </div>
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="java.pro.js"></script>
+<script>
+    // -----------------------------
+    // FUNCIONES DE SUMAR Y RESTAR
+    // -----------------------------
+    function sumar(btn) {
+        const contador = btn.parentNode.querySelector(".contador");
+        contador.textContent = parseInt(contador.textContent) + 1;
+    }
+    
+    function restar(btn) {
+        const contador = btn.parentNode.querySelector(".contador");
+        let valor = parseInt(contador.textContent);
+        if (valor > 0) contador.textContent = valor - 1;
+    }
+    
+    // -----------------------------
+    // AGREGAR AL CARRITO (GUARDAR EN LOCALSTORAGE)
+    // -----------------------------
+    function agregarCarrito(nombre, precio) {
+        // obtener cantidad seleccionada
+        let card = event.target.closest(".producto");
+        let cantidad = parseInt(card.querySelector(".contador").textContent);
+    
+        if (cantidad <= 0) {
+            alert("Selecciona una cantidad mayor a 0");
+            return;
+        }
+    
+        // traer carrito actual
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    
+        // verificar si ya existe
+        let productoExistente = carrito.find(item => item.nombre === nombre);
+    
+        if (productoExistente) {
+            productoExistente.cantidad += cantidad;
+        } else {
+            carrito.push({
+                nombre: nombre,
+                precio: precio,
+                cantidad: cantidad
+            });
+        }
+    
+        // guardar carrito actualizado
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    
+        alert(nombre + " agregado al carrito");
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<script>
+function agregarCarrito(nombre, precio, cantidad) {
+
+    let datos = new FormData();
+    datos.append("nombre", nombre);
+    datos.append("precio", precio);
+    datos.append("cantidad", cantidad);
+
+    fetch("agregar_carrito.php", {
+        method: "POST",
+        body: datos
+    })
+    .then(res => res.text())
+    .then(msj => {
+        alert("Producto agregado al carrito");
+    });
+}
+</script>
